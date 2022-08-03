@@ -14,10 +14,14 @@ public class Demon : MonoBehaviour
 
     public Animator animator;
 
+    public HealthBar healthBar;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
+        healthBar.UpdateHealthBar(maxHealth, currHealth);
      
     }
 
@@ -28,18 +32,12 @@ public class Demon : MonoBehaviour
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
-    private void Flip()
-    {
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;
-    }
-
     public void TakeDamge(int damage)
     {
         currHealth -= damage;
 
         animator.SetTrigger("Hurt");
+        healthBar.UpdateHealthBar(maxHealth, currHealth);
 
         if (currHealth <= 0)
         {
@@ -49,10 +47,7 @@ public class Demon : MonoBehaviour
 
     void Die()
     {
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        GetComponent<Renderer>().enabled = false;
+        Destroy(gameObject);
     }
 
-   
 }

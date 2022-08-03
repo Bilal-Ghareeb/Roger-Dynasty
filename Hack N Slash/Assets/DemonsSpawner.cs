@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DemonsSpawner : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DemonsSpawner : MonoBehaviour
     private float demonsInterval = 3.5f;
 
     public GameObject Player;
-
+  
     public Transform spawnerPosition;
 
     public int demonsCount = 5;
