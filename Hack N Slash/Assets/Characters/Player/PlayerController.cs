@@ -5,24 +5,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Player Components Refs
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundlayer;
     public TrailRenderer tr;
+    public Animator animator;
 
+    //Running Vars
     private bool canMove = true;
-
     private float horizontal;
     private float speed = 2f;
     private float jumpingpower = 6f;
     private bool isFacingRight = true;
 
+    //Dashing Vars
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 5f;
     private float dashingTime = 0.2f;
     private float dashingCoolDown = 0.5f;
 
+    //Rolling Vars
     private float rollSpeed = 3f;
     private bool canRoll = true;
     private bool isRolling;
@@ -30,9 +34,7 @@ public class PlayerController : MonoBehaviour
     private float rollingCoolDown = 0.1f;
 
 
-    public Animator animator;
- 
-
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -51,8 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        
 
-      
         if (!isDashing)
         {
             animator.SetBool("Dash", false);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Demon : MonoBehaviour
 {
     public GameObject player;
+    public GameObject dieEffect;
     public float speed;
     private float distance;
 
@@ -42,6 +43,7 @@ public class Demon : MonoBehaviour
         if (currHealth <= 0)
         {
             Die();
+            Instantiate(dieEffect, transform.position, Quaternion.identity);
         }
     }
 

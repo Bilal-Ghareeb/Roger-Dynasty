@@ -11,6 +11,7 @@ public class DemonsSpawner : MonoBehaviour
     private float demonsInterval = 3.5f;
 
     public GameObject Player;
+    public GameObject Effect;
 
 
     public Transform spawnerPosition;
@@ -32,6 +33,7 @@ public class DemonsSpawner : MonoBehaviour
             GameObject newEnemy = Instantiate(enemy, spawnerPosition.position, spawnerPosition.rotation);
             newEnemy.GetComponent<Demon>().player = Player;
             newEnemy.GetComponent<Demon>().speed = 0.8f;
+            newEnemy.GetComponent<Demon>().dieEffect = Effect;
             StartCoroutine(spawnDemon(interval, enemy));
         }
       
