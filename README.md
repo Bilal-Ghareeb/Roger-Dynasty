@@ -10,7 +10,7 @@ Hack and slash pixel art 2D game set in the Middle Ages - The main objective of 
 
 This is an old collection (2016-17) of Pixel Art Assets from my patreon page https://www.patreon.com/ansimuz
 
-Public domain and free to use on whatever you want, personal or commercial. Credit is not required but appreciated.
+Public domain and free to use on whatever you want, personal or commercial.
 
 Get more Free Assetslike these at: http://www.pixelgameart.org
 
