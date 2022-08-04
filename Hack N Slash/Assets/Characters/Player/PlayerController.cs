@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
         if(horizontal == 0)
         {
             animator.SetBool("isRunning", false);
+            GetComponent<AudioSource>().Stop();
         }
 
         if (IsGrounded())
@@ -132,6 +133,8 @@ public class PlayerController : MonoBehaviour
         {
             horizontal = context.ReadValue<Vector2>().x;
             animator.SetBool("isRunning", true);
+            GetComponent<AudioSource>().volume = Random.Range(0.2f, 0.5f);
+            GetComponent<AudioSource>().Play();
         }
            
     }
