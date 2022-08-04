@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public ParticleSystem dust;
+
     //Player Components Refs
     public Rigidbody2D rb;
     public Transform groundCheck;
@@ -120,6 +123,7 @@ public class PlayerController : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        CreateDust();
     }
 
     public void Move(InputAction.CallbackContext context) 
@@ -152,6 +156,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Roll());
             animator.SetBool("Roll", true);
         }
+    }
+
+    public void CreateDust()
+    {
+        dust.Play();
     }
 
   
